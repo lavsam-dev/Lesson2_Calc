@@ -1,7 +1,12 @@
 package com.geekbrains.lavsam.lesson2_calc;
 
 import android.os.Bundle;
+import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.FrameLayout;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -18,24 +23,48 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         screenMessage = findViewById(R.id.tv_screen);
         screenMessage.setText(getString(R.string.screen, 0));
 
-        findViewById(R.id.btn_1).setOnClickListener(this);
-        findViewById(R.id.btn_2).setOnClickListener(this);
-        findViewById(R.id.btn_3).setOnClickListener(this);
-        findViewById(R.id.btn_4).setOnClickListener(this);
-        findViewById(R.id.btn_5).setOnClickListener(this);
-        findViewById(R.id.btn_6).setOnClickListener(this);
-        findViewById(R.id.btn_7).setOnClickListener(this);
-        findViewById(R.id.btn_8).setOnClickListener(this);
-        findViewById(R.id.btn_9).setOnClickListener(this);
-        findViewById(R.id.btn_0).setOnClickListener(this);
-        findViewById(R.id.btn_clear).setOnClickListener(this);
-        findViewById(R.id.btn_clearAll).setOnClickListener(this);
-        findViewById(R.id.btn_div).setOnClickListener(this);
-        findViewById(R.id.btn_mult).setOnClickListener(this);
-        findViewById(R.id.btn_plus).setOnClickListener(this);
-        findViewById(R.id.btn_minus).setOnClickListener(this);
-        findViewById(R.id.btn_dot).setOnClickListener(this);
-        findViewById(R.id.btn_eq).setOnClickListener(this);
+        LayoutInflater inflater = getLayoutInflater();
+        FrameLayout l = (FrameLayout) inflater.inflate(R.layout.activity_main, null);
+
+        ViewGroup Current_Widget = (ViewGroup)l.getRootView();
+        int childCount = Current_Widget.getChildCount();
+        Log.d("viewgroup", "Current_Widget.getChildCount() " + childCount);
+
+        for (int i = 0; i < Current_Widget.getChildCount(); i++) {
+            View currentWidget = (View) Current_Widget.getChildAt(i);
+            Log.d("viewgroup", "currentWidget.getTag() " + currentWidget.getTag());
+//            if ((String)currentWidget.getTag() == "top_grid") {
+                ViewGroup Current_W = (ViewGroup) Current_Widget.getChildAt(i);
+            Log.d("viewgroup", "currentWidget.getTag() " + currentWidget.getTag());
+                Log.d("viewgroup", "Current_W.getChildCount() " + Current_W.getChildCount());
+                for (int j = 0; j < Current_W.getChildCount(); j++) {
+                    View currentButton = (View) Current_W.getChildAt(i);
+                    if (currentButton.getTag() == "button") {
+                        findViewById(currentButton.getId()).setOnClickListener(this);
+                    }
+                }
+//            }
+
+        }
+
+//        findViewById(R.id.btn_1).setOnClickListener(this);
+//        findViewById(R.id.btn_2).setOnClickListener(this);
+//        findViewById(R.id.btn_3).setOnClickListener(this);
+//        findViewById(R.id.btn_4).setOnClickListener(this);
+//        findViewById(R.id.btn_5).setOnClickListener(this);
+//        findViewById(R.id.btn_6).setOnClickListener(this);
+//        findViewById(R.id.btn_7).setOnClickListener(this);
+//        findViewById(R.id.btn_8).setOnClickListener(this);
+//        findViewById(R.id.btn_9).setOnClickListener(this);
+//        findViewById(R.id.btn_0).setOnClickListener(this);
+//        findViewById(R.id.btn_clear).setOnClickListener(this);
+//        findViewById(R.id.btn_clearAll).setOnClickListener(this);
+//        findViewById(R.id.btn_div).setOnClickListener(this);
+//        findViewById(R.id.btn_mult).setOnClickListener(this);
+//        findViewById(R.id.btn_plus).setOnClickListener(this);
+//        findViewById(R.id.btn_minus).setOnClickListener(this);
+//        findViewById(R.id.btn_dot).setOnClickListener(this);
+//        findViewById(R.id.btn_eq).setOnClickListener(this);
 
     }
 

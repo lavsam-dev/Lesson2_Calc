@@ -7,6 +7,8 @@
     android:background="@drawable/ic_pi_3166190">
 
     <GridLayout
+        android:id="@+id/top_grid"
+        android:tag="top_grid"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -33,6 +35,7 @@
 
         <Button
             android:id="@+id/btn_clearAll"
+            android:tag="button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="2dp"
@@ -41,6 +44,7 @@
 
         <Button
             android:id="@+id/btn_clear"
+            android:tag="button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="2dp"
@@ -49,6 +53,7 @@
 
         <Button
             android:id="@+id/btn_div"
+            android:tag="button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="2dp"
