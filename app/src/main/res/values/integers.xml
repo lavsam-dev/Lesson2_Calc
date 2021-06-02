@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="shadowDY">2</integer>
+    <integer name="shadowRadius">2</integer>
+    <integer name="shadowDX">2</integer>
+</resources>
