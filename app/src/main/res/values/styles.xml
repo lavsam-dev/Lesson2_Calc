@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="calcKeysStyle_digits">
+        <item name="android:shadowColor">@color/colorShadowWhite</item>
+        <item name="android:shadowDx">@integer/shadowDX</item>
+        <item name="android:shadowDy">@integer/shadowDY</item>
+        <item name="android:shadowRadius">@integer/shadowRadius</item>
+        <item name="android:fontFamily">@font/lucida_calc</item>
+        <item name="android:textColor">@color/colorMediumGray</item>
+        <item name="android:textSize">@dimen/textSize</item>
+        <item name="backgroundTint">@color/colorDigits</item>
+        <item name="android:alpha">0.9</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">0dp</item></style>
+
+    <style name="calcKeysStyle_actions">
+        <item name="android:shadowColor">@color/colorShadowWhite</item>
+        <item name="android:shadowDx">@integer/shadowDX</item>
+        <item name="android:shadowDy">@integer/shadowDY</item>
+        <item name="android:shadowRadius">@integer/shadowRadius</item>
+        <item name="android:fontFamily">@font/lucida_calc</item>
+        <item name="android:textColor">@color/colorLightGray</item>
+        <item name="android:textSize">@dimen/textSize</item>
+        <item name="backgroundTint">#1A9B35</item>
+        <item name="android:alpha">0.9</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">0dp</item>
+    </style>
+
+    <style name="calcKeysStyle_C_CE">
+        <item name="android:shadowColor">@color/colorShadowWhite</item>
+        <item name="android:shadowDx">@integer/shadowDX</item>
+        <item name="android:shadowDy">@integer/shadowDY</item>
+        <item name="android:shadowRadius">@integer/shadowRadius</item>
+        <item name="android:fontFamily">@font/lucida_calc</item>
+        <item name="android:textColor">@color/colorLightGray</item>
+        <item name="android:textSize">@dimen/textSize</item>
+        <item name="backgroundTint">@color/colorC_CE</item>
+        <item name="android:alpha">0.9</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">0dp</item>
+    </style>
+
+    <style name="calcKeysStyle_Result">
+        <item name="android:shadowColor">@color/colorShadowWhite</item>
+        <item name="android:shadowDx">@integer/shadowDX</item>
+        <item name="android:shadowDy">@integer/shadowDY</item>
+        <item name="android:shadowRadius">@integer/shadowRadius</item>
+        <item name="android:fontFamily">@font/lucida_calc</item>
+        <item name="android:textColor">@color/colorLightGray</item>
+        <item name="android:textSize">@dimen/textSize</item>
+        <item name="backgroundTint">@color/colorResult</item>
+        <item name="android:alpha">0.8</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">0dp</item>
+    </style>
+
+    <color name="colorDigits">#419FD9</color>
+    <color name="colorC_CE">#0366D6</color>
+    <color name="colorResult">#C75450</color>
+</resources>

@@ -12,13 +12,16 @@
     <string name="key_3">3</string>
     <string name="key_2">2</string>
     <string name="key_1">1</string>
-    <string name="screen">%d</string>
-    <string name="key_mult">x</string>
+    <string name="screen"></string>
+    <string name="key_mult">*</string>
     <string name="key_minus">-</string>
     <string name="key_plus">+</string>
     <string name="key_eq">=</string>
-    <string name="key_div">\u00F7</string>
+    <string name="key_div">/</string>
     <string name="key_clear">C</string>
     <string name="key_clearAll">CE</string>
     <string name="key_empty1" />
+    <string name="screen_empty">0</string>
+    <string name="background_image">background_image</string>
+    <string name="resultFormat">%.3f</string>
 </resources>

@@ -1,64 +1,79 @@
 package com.geekbrains.lavsam.lesson2_calc;
 
 import android.os.Bundle;
-import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+public class MainActivity extends AppCompatActivity {
 
+//    private final int[] numberButtonIds = new int[]{
+//            R.id.btn_0, R.id.btn_1, R.id.btn_2, R.id.btn_3,
+//            R.id.btn_4, R.id.btn_5, R.id.btn_6, R.id.btn_7, R.id.btn_8, R.id.btn_9,
+//            R.id.btn_dot, R.id.btn_minus, R.id.btn_plus, R.id.btn_mult, R.id.btn_div
+//    };
+    private final int[] numberButtonIds = new int[]{
+            R.id.key_0, R.id.key_1, R.id.key_2, R.id.key_3,
+            R.id.key_4, R.id.key_5, R.id.key_6, R.id.key_7, R.id.key_8, R.id.key_9,
+            R.id.key_dot, R.id.key_dec, R.id.key_sum, R.id.key_multi, R.id.key_div
+    };
     private TextView screenMessage;
+    private CalcPilum calc = new CalcPilum();
+    private String screenEval = new String();
+    private boolean eraseScreen = false;
+
+    private void setNumberButtonListeners() {
+        for (int i = 0; i < numberButtonIds.length; i++) {
+            findViewById(numberButtonIds[i]).setOnClickListener(v -> addAndShow(((Button) v).getText().toString()));
+        }
+        findViewById(R.id.key_CE).setOnClickListener(v -> {
+            screenEval = getString(R.string.screen_empty);
+            screenMessage.setText(screenEval);
+        });
+        findViewById(R.id.key_C).setOnClickListener(v -> {
+            if (screenEval.length() > 1) {
+                screenEval = screenEval.substring(0, screenEval.length() - 1);
+            } else {
+                screenEval = getString(R.string.screen_empty);
+            }
+            screenMessage.setText(screenEval);
+        });
+        findViewById(R.id.key_result).setOnClickListener(v -> {
+            eraseScreen = true;
+            double result = calc.Calculate(screenEval);
+            screenEval += getString(R.string.key_eq) + "\n" + String.format(getString(R.string.resultFormat), result);
+            screenMessage.setText(screenEval);
+        });
+    }
+
+    private void addAndShow(String s) {
+        if (eraseScreen) {
+            doEraseScreen();
+            screenEval = s;
+        } else {
+            if (screenEval == getString(R.string.screen_empty)) doEraseScreen();
+            screenEval += s;
+        }
+        screenMessage.setText(screenEval);
+    }
+
+    private void doEraseScreen() {
+        screenEval = "";
+        eraseScreen = false;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_main_g);
 
-        screenMessage = findViewById(R.id.tv_screen);
-        screenMessage.setText(getString(R.string.screen, 0));
+//        screenMessage = findViewById(R.id.tv_screen);
+        screenMessage = findViewById(R.id.resultTextView);
+        screenMessage.setText(getString(R.string.screen_empty));
 
-        findViewById(R.id.btn_1).setOnClickListener(this);
-        findViewById(R.id.btn_2).setOnClickListener(this);
-        findViewById(R.id.btn_3).setOnClickListener(this);
-        findViewById(R.id.btn_4).setOnClickListener(this);
-        findViewById(R.id.btn_5).setOnClickListener(this);
-        findViewById(R.id.btn_6).setOnClickListener(this);
-        findViewById(R.id.btn_7).setOnClickListener(this);
-        findViewById(R.id.btn_8).setOnClickListener(this);
-        findViewById(R.id.btn_9).setOnClickListener(this);
-        findViewById(R.id.btn_0).setOnClickListener(this);
-        findViewById(R.id.btn_clear).setOnClickListener(this);
-        findViewById(R.id.btn_clearAll).setOnClickListener(this);
-        findViewById(R.id.btn_div).setOnClickListener(this);
-        findViewById(R.id.btn_mult).setOnClickListener(this);
-        findViewById(R.id.btn_plus).setOnClickListener(this);
-        findViewById(R.id.btn_minus).setOnClickListener(this);
-        findViewById(R.id.btn_dot).setOnClickListener(this);
-        findViewById(R.id.btn_eq).setOnClickListener(this);
+        setNumberButtonListeners();
 
     }
 
-
-    @Override
-    public void onClick(View v) {
-        if (v.getId() == R.id.btn_1) screenMessage.setText(R.string.key_1);
-        if (v.getId() == R.id.btn_2) screenMessage.setText(R.string.key_2);
-        if (v.getId() == R.id.btn_3) screenMessage.setText(R.string.key_3);
-        if (v.getId() == R.id.btn_4) screenMessage.setText(R.string.key_4);
-        if (v.getId() == R.id.btn_5) screenMessage.setText(R.string.key_5);
-        if (v.getId() == R.id.btn_6) screenMessage.setText(R.string.key_6);
-        if (v.getId() == R.id.btn_7) screenMessage.setText(R.string.key_7);
-        if (v.getId() == R.id.btn_8) screenMessage.setText(R.string.key_8);
-        if (v.getId() == R.id.btn_9) screenMessage.setText(R.string.key_9);
-        if (v.getId() == R.id.btn_0) screenMessage.setText(R.string.key_0);
-        if (v.getId() == R.id.btn_clear) screenMessage.setText("");
-        if (v.getId() == R.id.btn_clearAll) screenMessage.setText(R.string.key_clearAll);
-        if (v.getId() == R.id.btn_div) screenMessage.setText(R.string.key_div);
-        if (v.getId() == R.id.btn_mult) screenMessage.setText(R.string.key_mult);
-        if (v.getId() == R.id.btn_plus) screenMessage.setText(R.string.key_plus);
-        if (v.getId() == R.id.btn_minus) screenMessage.setText(R.string.key_minus);
-        if (v.getId() == R.id.btn_dot) screenMessage.setText(R.string.key_dot);
-        if (v.getId() == R.id.btn_eq) screenMessage.setText(R.string.key_eq);
-    }
 }
