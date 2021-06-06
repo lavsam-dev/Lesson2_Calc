@@ -15,23 +15,24 @@
         android:scaleType="centerCrop"
         android:src="@drawable/background_img" />
 
-    <com.google.android.material.textview.MaterialTextView
+    <TextView
         android:id="@+id/resultTextView"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/tv_height"
-        android:layout_marginHorizontal="@dimen/tv_margin"
-        android:layout_marginTop="@dimen/tv_margin"
+        android:layout_width="@dimen/tv_width"
+        android:layout_height="match_parent"
+        android:layout_marginVertical="@dimen/tv_margin"
+        android:layout_marginStart="@dimen/tv_margin"
         android:background="@color/colorDarkBackground"
         android:fontFamily="@font/lucida_calc"
         android:padding="@dimen/tv_padding"
         android:textColor="@color/colorLightGray"
-        android:textSize="@dimen/tv_textSize"
-        app:layout_constraintBottom_toTopOf="@id/key_div"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:textSize="@dimen/textSize"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/key_CE"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_weight="50"
-        tools:text="@string/tv_text" />
+        app:layout_constraintHorizontal_weight="50"
+        tools:text="@string/tv_text"
+        android:visibility="visible"/>
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/key_CE"
@@ -39,10 +40,10 @@
         android:text="@string/key_clearAll"
         app:layout_constraintBottom_toBottomOf="@id/key_C"
         app:layout_constraintEnd_toStartOf="@id/key_C"
-        app:layout_constraintHorizontal_weight="1"
-        app:layout_constraintStart_toStartOf="@id/resultTextView"
+        app:layout_constraintHorizontal_weight="15"
+        app:layout_constraintStart_toEndOf="@id/resultTextView"
         app:layout_constraintTop_toTopOf="@id/key_C"
-        app:layout_constraintVertical_weight="10" />
+        app:layout_constraintVertical_weight="1" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/key_C"
@@ -50,10 +51,10 @@
         android:text="@string/key_clear"
         app:layout_constraintBottom_toBottomOf="@id/key_div"
         app:layout_constraintEnd_toStartOf="@id/key_div"
-        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintHorizontal_weight="15"
         app:layout_constraintStart_toEndOf="@id/key_CE"
         app:layout_constraintTop_toTopOf="@id/key_div"
-        app:layout_constraintVertical_weight="10" />
+        app:layout_constraintVertical_weight="1" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/key_1"
@@ -61,10 +62,10 @@
         android:text="@string/key_1"
         app:layout_constraintBottom_toBottomOf="@id/key_2"
         app:layout_constraintEnd_toStartOf="@id/key_2"
-        app:layout_constraintHorizontal_weight="1"
-        app:layout_constraintStart_toStartOf="@id/resultTextView"
+        app:layout_constraintHorizontal_weight="10"
+        app:layout_constraintStart_toEndOf="@id/resultTextView"
         app:layout_constraintTop_toTopOf="@id/key_2"
-        app:layout_constraintVertical_weight="10" />
+        app:layout_constraintVertical_weight="1" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/key_2"
@@ -72,10 +73,10 @@
         android:text="@string/key_2"
         app:layout_constraintBottom_toBottomOf="@id/key_3"
         app:layout_constraintEnd_toStartOf="@id/key_3"
-        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintHorizontal_weight="10"
         app:layout_constraintStart_toEndOf="@id/key_1"
         app:layout_constraintTop_toTopOf="@id/key_3"
-        app:layout_constraintVertical_weight="10" />
+        app:layout_constraintVertical_weight="1" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/key_3"
@@ -83,10 +84,10 @@
         android:text="@string/key_3"
         app:layout_constraintBottom_toBottomOf="@id/key_sum"
         app:layout_constraintEnd_toStartOf="@id/key_sum"
-        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintHorizontal_weight="10"
         app:layout_constraintStart_toEndOf="@id/key_2"
         app:layout_constraintTop_toTopOf="@id/key_sum"
-        app:layout_constraintVertical_weight="10" />
+        app:layout_constraintVertical_weight="1" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/key_div"
@@ -94,10 +95,10 @@
         android:text="@string/key_div"
         app:layout_constraintBottom_toTopOf="@id/key_multi"
         app:layout_constraintEnd_toEndOf="@id/key_multi"
-        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintHorizontal_weight="10"
         app:layout_constraintStart_toStartOf="@id/key_multi"
-        app:layout_constraintTop_toBottomOf="@id/resultTextView"
-        app:layout_constraintVertical_weight="10" />
+        app:layout_constraintTop_toTopOf="@id/resultTextView"
+        app:layout_constraintVertical_weight="1" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/key_4"
@@ -105,10 +106,10 @@
         android:text="@string/key_4"
         app:layout_constraintBottom_toBottomOf="@id/key_5"
         app:layout_constraintEnd_toStartOf="@id/key_5"
-        app:layout_constraintHorizontal_weight="1"
-        app:layout_constraintStart_toStartOf="@id/resultTextView"
+        app:layout_constraintHorizontal_weight="10"
+        app:layout_constraintStart_toEndOf="@id/resultTextView"
         app:layout_constraintTop_toTopOf="@id/key_5"
-        app:layout_constraintVertical_weight="10" />
+        app:layout_constraintVertical_weight="1" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/key_5"
@@ -116,10 +117,10 @@
         android:text="@string/key_5"
         app:layout_constraintBottom_toBottomOf="@id/key_6"
         app:layout_constraintEnd_toStartOf="@id/key_6"
-        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintHorizontal_weight="10"
         app:layout_constraintStart_toEndOf="@id/key_4"
         app:layout_constraintTop_toTopOf="@id/key_6"
-        app:layout_constraintVertical_weight="10" />
+        app:layout_constraintVertical_weight="1" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/key_6"
@@ -127,10 +128,10 @@
         android:text="@string/key_6"
         app:layout_constraintBottom_toBottomOf="@id/key_dec"
         app:layout_constraintEnd_toStartOf="@id/key_dec"
-        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintHorizontal_weight="10"
         app:layout_constraintStart_toEndOf="@id/key_5"
         app:layout_constraintTop_toTopOf="@id/key_dec"
-        app:layout_constraintVertical_weight="10" />
+        app:layout_constraintVertical_weight="1" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/key_multi"
@@ -138,10 +139,10 @@
         android:text="@string/key_mult"
         app:layout_constraintBottom_toTopOf="@id/key_dec"
         app:layout_constraintEnd_toEndOf="@id/key_dec"
-        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintHorizontal_weight="10"
         app:layout_constraintStart_toStartOf="@id/key_dec"
         app:layout_constraintTop_toBottomOf="@id/key_div"
-        app:layout_constraintVertical_weight="10" />
+        app:layout_constraintVertical_weight="1" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/key_7"
@@ -149,10 +150,10 @@
         android:text="@string/key_7"
         app:layout_constraintBottom_toBottomOf="@id/key_8"
         app:layout_constraintEnd_toStartOf="@id/key_8"
-        app:layout_constraintHorizontal_weight="1"
-        app:layout_constraintStart_toStartOf="@id/resultTextView"
+        app:layout_constraintHorizontal_weight="10"
+        app:layout_constraintStart_toEndOf="@id/resultTextView"
         app:layout_constraintTop_toTopOf="@id/key_8"
-        app:layout_constraintVertical_weight="10" />
+        app:layout_constraintVertical_weight="1" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/key_8"
@@ -160,10 +161,10 @@
         android:text="@string/key_8"
         app:layout_constraintBottom_toBottomOf="@id/key_9"
         app:layout_constraintEnd_toStartOf="@id/key_9"
-        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintHorizontal_weight="10"
         app:layout_constraintStart_toEndOf="@id/key_7"
         app:layout_constraintTop_toTopOf="@id/key_9"
-        app:layout_constraintVertical_weight="10" />
+        app:layout_constraintVertical_weight="1" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/key_9"
@@ -171,10 +172,10 @@
         android:text="@string/key_9"
         app:layout_constraintBottom_toBottomOf="@id/key_multi"
         app:layout_constraintEnd_toStartOf="@id/key_multi"
-        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintHorizontal_weight="10"
         app:layout_constraintStart_toEndOf="@id/key_8"
         app:layout_constraintTop_toTopOf="@id/key_multi"
-        app:layout_constraintVertical_weight="10" />
+        app:layout_constraintVertical_weight="1" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/key_dec"
@@ -182,10 +183,10 @@
         android:text="@string/key_minus"
         app:layout_constraintBottom_toTopOf="@id/key_sum"
         app:layout_constraintEnd_toEndOf="@id/key_sum"
-        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintHorizontal_weight="10"
         app:layout_constraintStart_toStartOf="@id/key_sum"
         app:layout_constraintTop_toBottomOf="@id/key_multi"
-        app:layout_constraintVertical_weight="10" />
+        app:layout_constraintVertical_weight="1" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/key_sum"
@@ -193,10 +194,10 @@
         android:text="@string/key_plus"
         app:layout_constraintBottom_toTopOf="@id/key_result"
         app:layout_constraintEnd_toEndOf="@id/key_result"
-        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintHorizontal_weight="10"
         app:layout_constraintStart_toStartOf="@id/key_result"
         app:layout_constraintTop_toBottomOf="@id/key_dec"
-        app:layout_constraintVertical_weight="10" />
+        app:layout_constraintVertical_weight="1" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/key_0"
@@ -204,10 +205,10 @@
         android:text="@string/key_0"
         app:layout_constraintBottom_toBottomOf="@id/key_result"
         app:layout_constraintEnd_toStartOf="@id/key_dot"
-        app:layout_constraintHorizontal_weight="2"
-        app:layout_constraintStart_toStartOf="@id/resultTextView"
+        app:layout_constraintHorizontal_weight="20"
+        app:layout_constraintStart_toEndOf="@id/resultTextView"
         app:layout_constraintTop_toTopOf="@id/key_result"
-        app:layout_constraintVertical_weight="10" />
+        app:layout_constraintVertical_weight="1" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/key_dot"
@@ -215,21 +216,20 @@
         android:text="@string/key_dot"
         app:layout_constraintBottom_toBottomOf="@id/key_result"
         app:layout_constraintEnd_toStartOf="@id/key_result"
-        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintHorizontal_weight="10"
         app:layout_constraintStart_toEndOf="@id/key_0"
         app:layout_constraintTop_toTopOf="@id/key_result"
-        app:layout_constraintVertical_weight="10" />
+        app:layout_constraintVertical_weight="1" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/key_result"
         style="@style/calcKeysMaterial.Result"
-        android:layout_marginBottom="@dimen/keys_margin"
         android:text="@string/key_eq"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@id/resultTextView"
-        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintBottom_toBottomOf="@id/resultTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_weight="10"
         app:layout_constraintStart_toEndOf="@id/key_dot"
         app:layout_constraintTop_toBottomOf="@id/key_sum"
-        app:layout_constraintVertical_weight="10" />
+        app:layout_constraintVertical_weight="1" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
