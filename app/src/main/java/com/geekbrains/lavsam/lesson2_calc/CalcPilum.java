@@ -1,5 +1,8 @@
 package com.geekbrains.lavsam.lesson2_calc;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 public class CalcPilum {
     // https://habr.com/ru/post/263775/
     // https://ideone.com/BnUec4
@@ -16,62 +19,10 @@ public class CalcPilum {
     private static double resultExec;
 
     public CalcPilum() {
-        opStack = new String[2000];
+        opStack = new String[200];
         ptrOp = 0;
-        valStack = new String[2000];
+        valStack = new String[200];
         ptrVal = 0;
-    }
-
-    double Calculate(String F) {
-        int i;
-        String curr, top;
-
-//        Init();
-        parse(F);
-
-        for (i = 0; i <= ptrL; i++) {
-            curr = Lex[i];
-            switch (curr) {
-                case "(":
-                    pushOp(curr);
-                    break;
-                case "+":
-                case "-":
-                case "*":
-                case "/":
-                case "^":
-                    if (isEmptyOp()) {
-                        pushOp(curr);
-                        break;
-                    }
-                    top = peekOp();
-                    if (Prty(curr) > Prty(top)) {
-                        pushOp(curr);
-                        break;
-                    } else {
-                        exec();
-                        pushOp(curr);
-                        break;
-                    }
-                case ")":
-                    while (true) {
-                        top = peekOp();
-                        if (top.equals("(")) {
-                            top = popOp();
-                            break;
-                        }
-                        exec();
-                    }
-                    break;
-                default:
-                    pushVal(curr);
-            }
-        }
-
-        while (!isEmptyOp()) {
-            exec();
-        }
-        return resultExec;
     }
 
     private static void parse(String Formula) {
@@ -140,7 +91,6 @@ public class CalcPilum {
 
         v1 = Double.toString(resultExec);
         pushVal(v1);
-
     }
 
     private static int Prty(String o) {
@@ -189,5 +139,57 @@ public class CalcPilum {
 
     private static String popVal() {
         return valStack[--ptrVal];
+    }
+
+    double Calculate(String F) {
+        int i;
+        String curr, top;
+
+//        Init();
+        parse(F);
+
+        for (i = 0; i <= ptrL; i++) {
+            curr = Lex[i];
+            switch (curr) {
+                case "(":
+                    pushOp(curr);
+                    break;
+                case "+":
+                case "-":
+                case "*":
+                case "/":
+                case "^":
+                    if (isEmptyOp()) {
+                        pushOp(curr);
+                        break;
+                    }
+                    top = peekOp();
+                    if (Prty(curr) > Prty(top)) {
+                        pushOp(curr);
+                        break;
+                    } else {
+                        exec();
+                        pushOp(curr);
+                        break;
+                    }
+                case ")":
+                    while (true) {
+                        top = peekOp();
+                        if (top.equals("(")) {
+                            top = popOp();
+                            break;
+                        }
+                        exec();
+                    }
+                    break;
+                default:
+                    pushVal(curr);
+            }
+        }
+
+        while (!isEmptyOp()) {
+            exec();
+        }
+        return resultExec;
     }
 }

@@ -24,4 +24,5 @@
     <string name="screen_empty">0</string>
     <string name="background_image">background_image</string>
     <string name="resultFormat">%.3f</string>
+    <string name="tv_text">0</string>
 </resources>

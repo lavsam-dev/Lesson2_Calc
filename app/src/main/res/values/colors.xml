@@ -12,4 +12,8 @@
     <color name="colorDarkBackground">#80000000</color>
     <color name="colorDarkBackgroundMedium">#66000000</color>
     <color name="colorMediumGray">#CCD8D8D8</color>
+    <color name="colorBackgroundActions">#1A9B35</color>
+    <color name="colorDigits">#419FD9</color>
+    <color name="colorC_CE">#0366D6</color>
+    <color name="colorResult">#C75450</color>
 </resources>
