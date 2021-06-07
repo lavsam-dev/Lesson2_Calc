@@ -9,11 +9,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
 
-    //    private final int[] numberButtonIds = new int[]{
-//            R.id.btn_0, R.id.btn_1, R.id.btn_2, R.id.btn_3,
-//            R.id.btn_4, R.id.btn_5, R.id.btn_6, R.id.btn_7, R.id.btn_8, R.id.btn_9,
-//            R.id.btn_dot, R.id.btn_minus, R.id.btn_plus, R.id.btn_mult, R.id.btn_div
-//    };
     private final int[] numberButtonIds = new int[]{
             R.id.key_0, R.id.key_1, R.id.key_2, R.id.key_3,
             R.id.key_4, R.id.key_5, R.id.key_6, R.id.key_7, R.id.key_8, R.id.key_9,
