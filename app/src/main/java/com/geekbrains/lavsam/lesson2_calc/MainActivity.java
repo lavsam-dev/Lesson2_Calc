@@ -24,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
     private String screenEval = new String();
     private boolean eraseScreen = false;
     private static final String ARG_EVAL = "ARG_EVAL";
+    private static final String ARG_ERASE_SCREEN = "ARG_ERASE_SCREEN";
 
     private void setNumberButtonListeners() {
         for (int i = 0; i < numberButtonIds.length; i++) {
@@ -83,12 +84,14 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onSaveInstanceState(@NonNull Bundle outState) {
         outState.putString(ARG_EVAL, screenEval);
+        outState.putBoolean(ARG_ERASE_SCREEN, eraseScreen);
         super.onSaveInstanceState(outState);
     }
 
     @Override
     protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState) {
         screenEval = savedInstanceState.getString(ARG_EVAL);
+        eraseScreen = savedInstanceState.getBoolean(ARG_ERASE_SCREEN);
         screenMessage.setText(screenEval);
         super.onRestoreInstanceState(savedInstanceState);
     }
