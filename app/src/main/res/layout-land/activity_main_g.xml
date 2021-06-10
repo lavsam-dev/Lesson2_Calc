@@ -9,30 +9,25 @@
     tools:context=".MainActivity">
 
     <ImageView
+        style="@style/calcIV"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:contentDescription="@string/background_image"
-        android:scaleType="centerCrop"
-        android:src="@drawable/background_img" />
+        android:layout_height="match_parent" />
 
     <TextView
         android:id="@+id/resultTextView"
+        style="@style/calcTV"
         android:layout_width="@dimen/tv_width"
         android:layout_height="match_parent"
         android:layout_marginVertical="@dimen/tv_margin"
         android:layout_marginStart="@dimen/tv_margin"
-        android:background="@color/colorDarkBackground"
         android:fontFamily="@font/lucida_calc"
         android:padding="@dimen/tv_padding"
-        android:textColor="@color/colorLightGray"
-        android:textSize="@dimen/textSize"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@id/key_CE"
+        app:layout_constraintHorizontal_weight="50"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintHorizontal_weight="50"
-        tools:text="@string/tv_text"
-        android:visibility="visible"/>
+        tools:text="@string/tv_text" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/key_CE"

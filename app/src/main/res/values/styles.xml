@@ -1,32 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="calcKeysMaterial" parent="Widget.AppCompat.Button.Borderless.Colored">
-        <item name="android:fontFamily">@font/lucida_calc</item>
-        <item name="android:layout_width">@dimen/key_width</item>
-        <item name="android:layout_height">@dimen/key_height</item>
-        <item name="android:alpha">@dimen/key_alpha</item>
-        <item name="android:textSize">@dimen/textSize</item>
-    </style>
-
-    <style name="calcKeysMaterial.digits">
-        <item name="android:textColor">@color/colorMediumGray</item>
-        <item name="backgroundTint">@color/colorDigits</item>
-    </style>
-
-    <style name="calcKeysMaterial.actions">
-        <item name="android:textColor">@color/colorLightGray</item>
-        <item name="backgroundTint">@color/colorBackgroundActions</item>
-    </style>
-
-    <style name="calcKeysMaterial.C_CE">
-        <item name="android:textColor">@color/colorLightGray</item>
-        <item name="backgroundTint">@color/colorC_CE</item>
-    </style>
-
-    <style name="calcKeysMaterial.Result">
-        <item name="android:textColor">@color/colorLightGray</item>
-        <item name="backgroundTint">@color/colorResult</item>
-    </style>
-
 </resources>

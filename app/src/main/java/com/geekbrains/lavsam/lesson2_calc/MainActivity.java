@@ -20,6 +20,9 @@ public class MainActivity extends AppCompatActivity {
     private boolean eraseScreen = false;
     private static final String ARG_EVAL = "ARG_EVAL";
     private static final String ARG_ERASE_SCREEN = "ARG_ERASE_SCREEN";
+    private static final String ARG_ACTIVITY_CURRENT = "ARG_ACTIVITY_CURRENT";
+
+    private int activityCurrent = R.layout.activity_main_g;
 
     private void setNumberButtonListeners() {
         for (int i = 0; i < numberButtonIds.length; i++) {
@@ -43,6 +46,16 @@ public class MainActivity extends AppCompatActivity {
             screenEval += getString(R.string.key_eq) + "\n" + String.format(getString(R.string.resultFormat), result);
             screenMessage.setText(screenEval);
         });
+        findViewById(R.id.key_theme).setOnClickListener(v -> {
+            if (activityCurrent == R.layout.activity_main_black) {
+                activityCurrent = R.layout.activity_main_g;
+            } else {
+                activityCurrent = R.layout.activity_main_black;
+            }
+
+            setContentView(activityCurrent);
+            recreate();
+        });
     }
 
     private void addAndShow(String s) {
@@ -64,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main_g);
+        setContentView(activityCurrent);
 
         screenMessage = findViewById(R.id.resultTextView);
         screenMessage.setText(getString(R.string.screen_empty));
@@ -80,6 +93,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onSaveInstanceState(@NonNull Bundle outState) {
         outState.putString(ARG_EVAL, screenEval);
         outState.putBoolean(ARG_ERASE_SCREEN, eraseScreen);
+        outState.putInt(ARG_ACTIVITY_CURRENT, activityCurrent);
         super.onSaveInstanceState(outState);
     }
 
@@ -87,6 +101,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState) {
         screenEval = savedInstanceState.getString(ARG_EVAL);
         eraseScreen = savedInstanceState.getBoolean(ARG_ERASE_SCREEN);
+        activityCurrent = savedInstanceState.getInt(ARG_ACTIVITY_CURRENT);
         screenMessage.setText(screenEval);
         super.onRestoreInstanceState(savedInstanceState);
     }
